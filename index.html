@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Gift</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8e8ff;
+            text-align: center;
+        }
+
+        header {
+            background: #c46bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        #loginPage,
+        #galleryPage {
+            display: none;
+        }
+
+        .login-box {
+            background: white;
+            padding: 20px;
+            max-width: 300px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #c46bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a152d6;
+        }
+
+        .gallery img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .message-box {
+            background: rgb(111, 186, 248);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Happy Birthday Tenay!</header>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="container">
+        <h2>Hello Tenay I hope ma happy ka ani hehe!</h2>
+        <p>Kindly click the enter tenay mwah!</p>
+        <button onclick="goToLogin()">Enter</button>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="loginPage" class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <p>Enter the password:</p>
+            <input type="password" id="password" placeholder="Password" />
+            <button onclick="login()">Login</button>
+            <p id="error" style="color:red;"></p>
+        </div>
+    </div>
+
+    <!-- GALLERY + MESSAGE PAGE -->
+    <div id="galleryPage" class="container">
+        <h2>I love you Tenay dear</h2>
+
+        <!-- Music -->
+        <audio id="bgMusic" autoplay loop>
+            <source src="" type="audio/mpeg" />
+        </audio>
+
+        <!-- Pictures -->
+        <div class="gallery">
+            <img src="c:\Users\Personal Laptop\Downloads\509185412_4256804181201637_4104521858943673483_n.jpg"
+                alt="Picture 1" />
+            <img src="c:\Users\Personal Laptop\Downloads\507039425_4252490611632994_4164885176220442218_n.jpg"
+                alt="Picture 2" />
+            <img src="c:\Users\Personal Laptop\Downloads\485379499_4160070960874960_1253298063806615195_n.jpg"
+                alt="Picture 3" />
+        </div>
+
+        <!-- Message -->
+        <div class="message-box">
+            Dear tenay,<br><br>
+            Happy happy birthday! 🎉 Thank you for everything and for always being there. I am super grateful to have
+            you. I hope your day is filled with love, nah oy late najud ni HAHAH. Pero tenay tana ma appreciate japon ni
+            nimo hahahhahaha.If naa kay problem
+            tenay, pray lang then smile dayun.Ayaw walaa ang smile saimong face tenay kay isa na sa dahilan ngano
+            pretty ka hehehe i love you tenay. HAPPY BIRTHDAY!
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            document.getElementById("homePage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+        }
+
+        function login() {
+            let password = document.getElementById("password").value;
+            if (password === "happybirthday") {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("galleryPage").style.display = "block";
+            } else {
+                document.getElementById("error").textContent = "Incorrect password! Try again.";
+            }
+        }
+    </script>
+</body>
+
+</html>
